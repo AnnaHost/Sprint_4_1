@@ -34,6 +34,8 @@ public class AccountTest {
                 {"", "Пустая строка не пройдет проверку", false},
                 {"ОК", "Строка меньше 3 символов не пройдет проверку", false},
                 {"123456789 1234567892", "Строка больше 19 символов не пройдет проверку", false},
+                {null,"Не строка не пройдет проверку",false}
+
         };
     }
 
@@ -41,7 +43,7 @@ public class AccountTest {
     @DisplayName("Проверка ввода разных данных владельца карты.")
     public void test() {
         Account account = new Account(name);
-        Allure.addAttachment("Строка для проверки", name);
+        //Allure.addAttachment("Строка для проверки", name);
         Allure.addAttachment("Ожидаемый результат", description);
         MatcherAssert.assertThat(account.checkNameToEmboss(), is(result));
     }

@@ -10,7 +10,8 @@ public class Account {
      Если строка удовлетворяет условиям, метод возвращает true, иначе — false.
  */
     public boolean checkNameToEmboss() {
-        if (name.length() >= 3 && name.length() <= 19 && countSpace() == 1 && !name.startsWith(" ") && !name.endsWith(" ") ) {
+        /*К сожалению совсем не изучала регэкспы, потрачу на это много времени*/
+        if (name != null && name.length() >= 3 && name.length() <= 19 && countSpace() == 1 && !name.startsWith(" ") && !name.endsWith(" ") ) {
             return true;
         } else {
             return false;
